@@ -28,3 +28,7 @@ ionic generate
 
 ionic generate page
 
+
+
+## Solución a problema "no se reconoce ng..."
+npm install --save-dev @angular/cli@latest
