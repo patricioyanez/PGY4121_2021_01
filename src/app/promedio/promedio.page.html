@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Promediador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="warning">
+  <ion-text color="primary" class="ion-text-center">
+    <h1>Promedio de la asignatura</h1>
+  </ion-text>
+  <br>
+  <ion-input type="number" placeholder="Ingrese nota 1" #nota1></ion-input>
+  <ion-input type="number" placeholder="Ingrese nota 2" #nota2></ion-input>
+  <ion-input type="number" placeholder="Ingrese nota 3" #nota3></ion-input>
+  <br>
+  <ion-button (click)="promediar(nota1,nota2,nota3)" expand="block" fill="clear" shape="round">
+    Promediar
+  </ion-button>
+  <br>
+  <div *ngIf="resultado;">
+    <div *ngIf="resultado >= 55; else noSeSalvo">
+      <ion-text color="primary">
+        <h1>Ud se salvo del examen</h1>
+      </ion-text>
+    </div>
+    <ng-template #noSeSalvo> 
+      <ion-text color="primary"><h2>Debe rendir examen</h2></ion-text> 
+    </ng-template>
+  </div>
+</ion-content>

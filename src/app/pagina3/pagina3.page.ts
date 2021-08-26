@@ -11,6 +11,7 @@ export class Pagina3Page implements OnInit {
 
   ngOnInit() {
   }
+  
   onClick()
   {
     console.log("ud realizó un clic")
