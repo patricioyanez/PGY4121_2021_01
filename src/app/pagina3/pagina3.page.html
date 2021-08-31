@@ -28,14 +28,16 @@
   <br>
   <br>
   <ion-list>
-    <ion-item *ngFor="let persona of listado" [routerLink]="['/detalle', 1]">
+    <div *ngFor="let persona of listado" [routerLink]="['detalle', 1]">
+    <ion-item>
       <ion-avatar>
         <ion-img [src]="persona.foto"></ion-img>
       </ion-avatar>
       <ion-label color="primary">{{persona.nombre}}</ion-label>
       <ion-text color="primary">
-        <h1>{{persona.edad}}</h1>
+        <h1>{{persona.edad}} años</h1>
       </ion-text>
     </ion-item>
+  </div>
   </ion-list>
 </ion-content>
