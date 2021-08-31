@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
     <ion-title>Promediador</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,22 +12,37 @@
     <h1>Promedio de la asignatura</h1>
   </ion-text>
   <br>
-  <ion-input type="number" placeholder="Ingrese nota 1" #nota1></ion-input>
-  <ion-input type="number" placeholder="Ingrese nota 2" #nota2></ion-input>
-  <ion-input type="number" placeholder="Ingrese nota 3" #nota3></ion-input>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4"><ion-input type="number" placeholder="Ingrese nota 1" #nota1></ion-input></ion-col>
+      <ion-col size="4"><ion-input type="number" placeholder="Ingrese nota 2" #nota2></ion-input></ion-col>
+      <ion-col size="4"><ion-input type="number" placeholder="Ingrese nota 3" #nota3></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
   <br>
-  <ion-button (click)="promediar(nota1,nota2,nota3)" expand="block" fill="clear" shape="round">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="4"><ion-input type="number" placeholder="% Pond 1" #pon1></ion-input></ion-col>
+      <ion-col size="4"><ion-input type="number" placeholder="% Pond 2" #pon2></ion-input></ion-col>
+      <ion-col size="4"><ion-input type="number" placeholder="% Pond 3" #pon3></ion-input></ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-button (click)="promediar(nota1,nota2,nota3, pon1, pon2, pon3)" expand="block" fill="clear" shape="round">
     Promediar
   </ion-button>
   <br>
   <div *ngIf="resultado;">
+    <ion-text color="primary">
+      <h1 class="ion-text-center">Su promedio es:{{resultado | number:'1.0-1'}} </h1>
+    </ion-text>
+
     <div *ngIf="resultado >= 55; else noSeSalvo">
       <ion-text color="primary">
-        <h1>Ud se salvo del examen</h1>
+        <h1 class="ion-text-center">Ud se salvo del examen</h1>
       </ion-text>
     </div>
     <ng-template #noSeSalvo> 
-      <ion-text color="primary"><h2>Debe rendir examen</h2></ion-text> 
+      <ion-text color="danger"><h2 class="ion-text-center">Debe rendir examen</h2></ion-text> 
     </ng-template>
   </div>
 </ion-content>
