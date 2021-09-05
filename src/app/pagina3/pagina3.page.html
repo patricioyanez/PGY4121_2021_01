@@ -28,7 +28,7 @@
   <br>
   <br>
   <ion-list>
-    <div *ngFor="let persona of personas" [routerLink]="['/detalle', persona.id]">
+    <div *ngFor="let persona of personas" [routerLink]="['/', persona.id]">
     <ion-item>
       <ion-avatar>
         <ion-img [src]="persona.foto"></ion-img>

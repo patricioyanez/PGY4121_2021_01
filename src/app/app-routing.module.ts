@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./promedio/promedio.module').then( m => m.PromedioPageModule)
   },
   {
-    path: 'detalle',
+    path: ':id',
     loadChildren: () => import('./detalle/detalle.module').then( m => m.DetallePageModule)
   },
 ];
