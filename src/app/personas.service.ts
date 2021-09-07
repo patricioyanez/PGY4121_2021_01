@@ -22,7 +22,7 @@ export class PersonasService {
     
     { 
       id    : 3,
-      nombre: 'Juan',
+      nombre: 'Lady Dennisse',
       edad  : 25,
       foto  : 'https://s03.s3c.es/imag/_v0/770x420/7/6/f/700x420_GettyImages-522796439.jpg'
     },
