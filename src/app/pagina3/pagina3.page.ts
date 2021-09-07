@@ -24,4 +24,9 @@ export class Pagina3Page implements OnInit {
   {
     console.log("ud realizó un clic")
   }
+
+  ingresar()
+  {
+    this.router.navigate(['/ingreso']);
+  }
 }
