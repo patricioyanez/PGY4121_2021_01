@@ -15,6 +15,10 @@ export class Pagina3Page implements OnInit {
   ngOnInit() {
     this.personas = this.personasService.getPersonas();
   }
+  ionViewWillEnter()
+  {
+    this.personas = this.personasService.getPersonas();
+  }
   
   onClick()
   {
