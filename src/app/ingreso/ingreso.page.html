@@ -1,24 +1,33 @@
 <ion-header>
   <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-back-button defautHref="pagina3"></ion-back-button>
+    </ion-buttons>
     <ion-title>Ingreso de persona</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-text color="primary">
+  <ion-text color="primary" class="ion-text-center">
     <h1>Datos personales</h1>
   </ion-text>
-  <ion-grid fixed>
-    <ion-row>
-      <ion-col size="5">
-        <ion-text color="primary">
-          <h1>Nombre</h1>
-        </ion-text>
-      </ion-col>
-      <ion-col size="7">
-        <ion-input type="text" placeholder="Ingrese el nombre"></ion-input>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <ion-item>
+    <ion-label>Nombre:</ion-label>
+    <ion-input placeholder="Ej: Bruno Diaz" #nombre></ion-input>
+  </ion-item>
 
+  <ion-item>
+    <ion-label position="floating">Url de la imagen</ion-label>
+    <ion-input #url></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Edad</ion-label>
+    <ion-input type="number" required #edad></ion-input>
+  </ion-item>
+
+    <br><br>
+    <ion-button expand="block" shape="round" (click)="agregar(nombre, url, edad)">2
+      Agregar
+    </ion-button>
 </ion-content>

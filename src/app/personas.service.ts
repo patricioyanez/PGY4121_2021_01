@@ -40,6 +40,11 @@ export class PersonasService {
     return this.personas.find(x => {return x.id == id})
   }
 
+  deletePersona(id: number)
+  {
+    this.personas = this.personas.filter(x=> {return x.id != id})
+  }
+  
   addPersona(nombre: string, edad: number, foto: string)
   {
     this.personas.push(
@@ -48,10 +53,5 @@ export class PersonasService {
         edad    : edad,
         foto    : foto          
     })
-  }
-
-  deletePersona(id: number)
-  {
-    this.personas = this.personas.filter(x=> {return x.id != id})
   }
 }
